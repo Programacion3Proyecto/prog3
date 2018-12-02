@@ -5,7 +5,7 @@ using System.Web;
 
 namespace FinalProg3.Models
 {
-    public class Empleado
+    public class Emplead
     {
         public int id { get; set; }
         public int nombre { get; set; }
