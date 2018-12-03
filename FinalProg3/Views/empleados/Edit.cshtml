@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2 class="text-center" style="margin: 3% 0 2% 0;">Modificar empleados</h2>
 
 
 @using (Html.BeginForm())
@@ -12,54 +12,52 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>empleados</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(model => model.nombre, "Nombre:", htmlAttributes: new { @class = "text-center", @style = "width:100%;" })
+            <div class="center-block">
+                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control center-block text-center" } })
                 @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.apellido, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.apellido, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(model => model.apellido, "Apellido:", htmlAttributes: new { @class = "text-center", @style = "width:100%;" })
+            <div class="center-block">
+                @Html.EditorFor(model => model.apellido, new { htmlAttributes = new { @class = "form-control center-block text-center" } })
                 @Html.ValidationMessageFor(model => model.apellido, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.puesto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.puesto, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(model => model.puesto, "Puesto:", htmlAttributes: new { @class = "text-center", @style = "width:100%;" })
+            <div class="center-block">
+                @Html.EditorFor(model => model.puesto, new { htmlAttributes = new { @class = "form-control center-block text-center" } })
                 @Html.ValidationMessageFor(model => model.puesto, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.usuario, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.usuario, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(model => model.usuario, "Usuario:", htmlAttributes: new { @class = "text-center", @style = "width:100%;" })
+            <div class="center-block">
+                @Html.EditorFor(model => model.usuario, new { htmlAttributes = new { @class = "form-control center-block text-center" } })
                 @Html.ValidationMessageFor(model => model.usuario, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.clave, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.clave, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(model => model.clave, "Clave:", htmlAttributes: new { @class = "text-center", @style = "width:100%;" })
+            <div class="center-block">
+                @Html.Password("Clave", "", new { id = "clave", Textmode = "Password", @class = "form-control center-block text-center", placeholder = "Clave", @style = "margin-bottom: 2%;" })
                 @Html.ValidationMessageFor(model => model.clave, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Guardar" class="btn btn-default" />
+        <div class="form-group center-block">
+            <div class="center-block">
+                <input type="submit" value="Guardar" class="btn btn-danger btn-lg btn-block center-block " />
             </div>
         </div>
     </div>

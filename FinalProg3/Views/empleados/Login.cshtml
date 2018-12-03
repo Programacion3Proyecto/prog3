@@ -3,37 +3,38 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
 @using (Html.BeginForm())
 {
-    @Html.TextBox("Usuario")
-    <hr />
-    @Html.Password("Clave", "", new { id = "Clave", Textmode = "Password" }) <hr />
-    <input id="Iniciar" type="submit" value="Inicio" onclick="Login();" />
-}
+    
+<div class="form-horizontal" style="margin:10% 0 10% 0">
+    <h2 class="text-center" style="margin: 3% 0 2% 0;">Login</h2>
 
+    @Html.TextBox("Usuario", "", new { id = "Usuario", @class = "form-control center-block text-center", placeholder = "Usuario", @style = "margin-bottom: 2%;" })
 
-@section Scripts{
-    @Scripts.Render("~/bundles/jqueryval")
-}
-
-<script type="text/javascript">
-
-    function Login() {
-        var usuario = $("#Usuario").val();
-        var password = $("#Clave").val();
-
-        if (usuario == '') {
-            alert('Indique el usuario');
-            $("#Usuario").focus();
-            return false;
+    @Html.Password("Clave", "", new { id = "Clave", Textmode = "Password", @class = "form-control center-block text-center", placeholder = "Clave", @style = "margin-bottom: 2%;" })
+    <input class="btn btn-danger btn-lg btn-block center-block" id="Iniciar" type="submit" value="Iniciar" onclick="Login();" />
+</div>
         }
-        if (password == '') {
-            alert('Indique la Contraseña');
-            $("#Clave").focus();
-            return false;
-        }
-        return true;
-    }
 
-</script>
+        @section Scripts{
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+        <script type="text/javascript">
+            function Login() {
+                var usuario = $("#Usuario").val();
+                var password = $("#Clave").val();
+
+                if (usuario == '') {
+                    alert('Indique el usuario');
+                    $("#Usuario").focus();
+                    return false;
+                }
+                if (password == '') {
+                    alert('Indique la Contraseña');
+                    $("#Clave").focus();
+                    return false;
+                }
+                return true;
+            }
+
+        </script>
