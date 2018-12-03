@@ -21,33 +21,33 @@ namespace FinalProg3.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(string user, string pass)
+        public ActionResult Login(string Usuario, string Clave)
         {
-            empleados us = db.empleados.FirstOrDefault(d => d.usuario == user & d.clave == pass);
+            empleados us = db.empleados.FirstOrDefault(d => d.usuario == Usuario & d.clave == Clave);
             string puesto;
             if (us != null)
             {
                 puesto = us.puesto;
-                if (puesto=="Admin")
-                {
-                        
-                    return RedirectToAction("Index");
-                }
-                else if (puesto=="Secretario")
-                {
+                 if (puesto=="Admin")
+                 {
 
-                    return RedirectToAction("Index");
+                     return RedirectToAction("Index");
+                 }
+                 else if (puesto=="Secretario")
+                 {
 
-                }
-                else if (puesto=="Medico")
-                {
+                     return RedirectToAction("Index");
 
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    return HttpNotFound();
-                }
+                 }
+                 else if (puesto=="Medico")
+                 {
+
+                     return RedirectToAction("Index");
+                 }
+                 else
+                 {
+                     return HttpNotFound();
+                 }
             }
             else
             {

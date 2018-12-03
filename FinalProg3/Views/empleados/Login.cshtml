@@ -4,10 +4,36 @@
 }
 
 <h2>Login</h2>
-<div>
-    <input id="Usuario" type="text" />
+@using (Html.BeginForm())
+{
+    @Html.TextBox("Usuario")
     <hr />
-    <input id="Clave" type="password" />
-    <hr />
-    <input id="Iniciar" type="button" value="Inicio" />
-</div>
+    @Html.Password("Clave", "", new { id = "Clave", Textmode = "Password" }) <hr />
+    <input id="Iniciar" type="submit" value="Inicio" onclick="Login();" />
+}
+
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script type="text/javascript">
+
+    function Login() {
+        var usuario = $("#Usuario").val();
+        var password = $("#Clave").val();
+
+        if (usuario == '') {
+            alert('Indique el usuario');
+            $("#Usuario").focus();
+            return false;
+        }
+        if (password == '') {
+            alert('Indique la Contraseña');
+            $("#Clave").focus();
+            return false;
+        }
+        return true;
+    }
+
+</script>
