@@ -10,148 +10,107 @@ using FinalProg3.Models;
 
 namespace FinalProg3.Controllers
 {
-    public class empleadosController : Controller
+    public class citasController : Controller
     {
-        private consultorioEntities db = new consultorioEntities();
-        
+        private consultorioEntities1 db = new consultorioEntities1();
 
-        public ActionResult Login()
-        {
-            
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Login(string Usuario, string Clave)
-        {
-            empleados us = db.empleados.FirstOrDefault(d => d.usuario == Usuario & d.clave == Clave);
-            string puesto;
-            if (us != null)
-            {
-                puesto = us.puesto;
-                 if (puesto=="Admin")
-                 {
-
-                     return RedirectToAction("Index");
-                 }
-                 else if (puesto=="Secretario")
-                 {
-
-                     return RedirectToAction("Index", "pacientes");
-
-                 }
-                 else if (puesto=="Medico")
-                 {
-
-                     return RedirectToAction("Index");
-                 }
-                 else
-                 {
-                     return HttpNotFound();
-                 }
-            }
-            else
-            {
-                return HttpNotFound();
-            }
-        }
-
-        // GET: empleados
+        // GET: citas
         public ActionResult Index()
         {
-            return View(db.empleados.ToList());
+            return View(db.citas.ToList());
         }
 
-        // GET: empleados/Details/5
+        // GET: citas/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            empleados empleados = db.empleados.Find(id);
-            if (empleados == null)
+            citas citas = db.citas.Find(id);
+            if (citas == null)
             {
                 return HttpNotFound();
             }
-            return View(empleados);
+            return View(citas);
         }
 
-        // GET: empleados/Create
+        // GET: citas/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: empleados/Create
+        // POST: citas/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombre,apellido,puesto,usuario,clave")] empleados empleados)
+        public ActionResult Create([Bind(Include = "id,fechaOtorgada,duracion,idMedico,idPaciente,fechaRealizada,idAsistenteRealizada")] citas citas)
         {
             if (ModelState.IsValid)
             {
-                db.empleados.Add(empleados);
+                db.citas.Add(citas);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(empleados);
+            return View(citas);
         }
 
-        // GET: empleados/Edit/5
+        // GET: citas/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            empleados empleados = db.empleados.Find(id);
-            if (empleados == null)
+            citas citas = db.citas.Find(id);
+            if (citas == null)
             {
                 return HttpNotFound();
             }
-            return View(empleados);
+            return View(citas);
         }
 
-        // POST: empleados/Edit/5
+        // POST: citas/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombre,apellido,puesto,usuario,clave")] empleados empleados)
+        public ActionResult Edit([Bind(Include = "id,fechaOtorgada,duracion,idMedico,idPaciente,fechaRealizada,idAsistenteRealizada")] citas citas)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(empleados).State = EntityState.Modified;
+                db.Entry(citas).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(empleados);
+            return View(citas);
         }
 
-        // GET: empleados/Delete/5
+        // GET: citas/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            empleados empleados = db.empleados.Find(id);
-            if (empleados == null)
+            citas citas = db.citas.Find(id);
+            if (citas == null)
             {
                 return HttpNotFound();
             }
-            return View(empleados);
+            return View(citas);
         }
 
-        // POST: empleados/Delete/5
+        // POST: citas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            empleados empleados = db.empleados.Find(id);
-            db.empleados.Remove(empleados);
+            citas citas = db.citas.Find(id);
+            db.citas.Remove(citas);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

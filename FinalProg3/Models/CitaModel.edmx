@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="consultorioModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="citas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="fechaOtorgada" Type="datetime" />
+          <Property Name="duracion" Type="int" />
+          <Property Name="idMedico" Type="int" Nullable="false" />
+          <Property Name="idPaciente" Type="int" Nullable="false" />
+          <Property Name="fechaRealizada" Type="datetime" />
+          <Property Name="idAsistenteRealizada" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="empleados">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="30" />
+          <Property Name="apellido" Type="varchar" MaxLength="30" />
+          <Property Name="puesto" Type="varchar" MaxLength="30" />
+          <Property Name="usuario" Type="varchar" MaxLength="20" />
+          <Property Name="clave" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="citasForanea_Asistente">
+          <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
+          <End Role="citas" Type="Self.citas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empleados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="citas">
+              <PropertyRef Name="idAsistenteRealizada" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="citasForanea_Medico">
+          <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
+          <End Role="citas" Type="Self.citas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empleados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="citas">
+              <PropertyRef Name="idMedico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="consultorioModel2StoreContainer">
+          <EntitySet Name="citas" EntityType="Self.citas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="empleados" EntityType="Self.empleados" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="citasForanea_Asistente" Association="Self.citasForanea_Asistente">
+            <End Role="empleados" EntitySet="empleados" />
+            <End Role="citas" EntitySet="citas" />
+          </AssociationSet>
+          <AssociationSet Name="citasForanea_Medico" Association="Self.citasForanea_Medico">
+            <End Role="empleados" EntitySet="empleados" />
+            <End Role="citas" EntitySet="citas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="consultorioModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="citas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="fechaOtorgada" Type="DateTime" Precision="3" />
+          <Property Name="duracion" Type="Int32" />
+          <Property Name="idMedico" Type="Int32" Nullable="false" />
+          <Property Name="idPaciente" Type="Int32" Nullable="false" />
+          <Property Name="fechaRealizada" Type="DateTime" Precision="3" />
+          <Property Name="idAsistenteRealizada" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="empleados" Relationship="Self.citasForanea_Asistente" FromRole="citas" ToRole="empleados" />
+          <NavigationProperty Name="empleados1" Relationship="Self.citasForanea_Medico" FromRole="citas" ToRole="empleados" />
+        </EntityType>
+        <EntityType Name="empleados">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="puesto" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="clave" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="citas" Relationship="Self.citasForanea_Asistente" FromRole="empleados" ToRole="citas" />
+          <NavigationProperty Name="citas1" Relationship="Self.citasForanea_Medico" FromRole="empleados" ToRole="citas" />
+        </EntityType>
+        <Association Name="citasForanea_Asistente">
+          <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
+          <End Role="citas" Type="Self.citas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empleados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="citas">
+              <PropertyRef Name="idAsistenteRealizada" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="citasForanea_Medico">
+          <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
+          <End Role="citas" Type="Self.citas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empleados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="citas">
+              <PropertyRef Name="idMedico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="consultorioEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="citas" EntityType="Self.citas" />
+          <EntitySet Name="empleados" EntityType="Self.empleados" />
+          <AssociationSet Name="citasForanea_Asistente" Association="Self.citasForanea_Asistente">
+            <End Role="empleados" EntitySet="empleados" />
+            <End Role="citas" EntitySet="citas" />
+          </AssociationSet>
+          <AssociationSet Name="citasForanea_Medico" Association="Self.citasForanea_Medico">
+            <End Role="empleados" EntitySet="empleados" />
+            <End Role="citas" EntitySet="citas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="consultorioModel2StoreContainer" CdmEntityContainer="consultorioEntities2">
+          <EntitySetMapping Name="citas">
+            <EntityTypeMapping TypeName="consultorioModel2.citas">
+              <MappingFragment StoreEntitySet="citas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fechaOtorgada" ColumnName="fechaOtorgada" />
+                <ScalarProperty Name="duracion" ColumnName="duracion" />
+                <ScalarProperty Name="idMedico" ColumnName="idMedico" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="fechaRealizada" ColumnName="fechaRealizada" />
+                <ScalarProperty Name="idAsistenteRealizada" ColumnName="idAsistenteRealizada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empleados">
+            <EntityTypeMapping TypeName="consultorioModel2.empleados">
+              <MappingFragment StoreEntitySet="empleados">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="puesto" ColumnName="puesto" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

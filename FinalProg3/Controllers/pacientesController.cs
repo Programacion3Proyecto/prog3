@@ -10,150 +10,114 @@ using FinalProg3.Models;
 
 namespace FinalProg3.Controllers
 {
-    public class empleadosController : Controller
+    public class pacientesController : Controller
     {
-        private consultorioEntities db = new consultorioEntities();
-        
+        private consultorioEntities1 db = new consultorioEntities1();
 
-        public ActionResult Login()
-        {
-            
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Login(string Usuario, string Clave)
-        {
-            empleados us = db.empleados.FirstOrDefault(d => d.usuario == Usuario & d.clave == Clave);
-            string puesto;
-            if (us != null)
-            {
-                puesto = us.puesto;
-                 if (puesto=="Admin")
-                 {
-
-                     return RedirectToAction("Index");
-                 }
-                 else if (puesto=="Secretario")
-                 {
-
-                     return RedirectToAction("Index", "pacientes");
-
-                 }
-                 else if (puesto=="Medico")
-                 {
-
-                     return RedirectToAction("Index");
-                 }
-                 else
-                 {
-                     return HttpNotFound();
-                 }
-            }
-            else
-            {
-                return HttpNotFound();
-            }
-        }
-
-        // GET: empleados
+        // GET: pacientes
         public ActionResult Index()
         {
-            return View(db.empleados.ToList());
+            return View(db.pacientes.ToList());
         }
 
-        // GET: empleados/Details/5
+        // GET: pacientes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            empleados empleados = db.empleados.Find(id);
-            if (empleados == null)
+            pacientes pacientes = db.pacientes.Find(id);
+            if (pacientes == null)
             {
                 return HttpNotFound();
             }
-            return View(empleados);
+            return View(pacientes);
         }
 
-        // GET: empleados/Create
+        // GET: pacientes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: empleados/Create
+        // POST: pacientes/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombre,apellido,puesto,usuario,clave")] empleados empleados)
+        public ActionResult Create([Bind(Include = "id,nombre,apellido,telefono,fechaNac,tipoSangre")] pacientes pacientes)
         {
             if (ModelState.IsValid)
             {
-                db.empleados.Add(empleados);
+                db.pacientes.Add(pacientes);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(empleados);
+            return View(pacientes);
         }
 
-        // GET: empleados/Edit/5
+        // GET: pacientes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            empleados empleados = db.empleados.Find(id);
-            if (empleados == null)
+            pacientes pacientes = db.pacientes.Find(id);
+            if (pacientes == null)
             {
                 return HttpNotFound();
             }
-            return View(empleados);
+            return View(pacientes);
         }
 
-        // POST: empleados/Edit/5
+        // POST: pacientes/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombre,apellido,puesto,usuario,clave")] empleados empleados)
+        public ActionResult Edit([Bind(Include = "id,nombre,apellido,telefono,fechaNac,tipoSangre")] pacientes pacientes)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(empleados).State = EntityState.Modified;
+                db.Entry(pacientes).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(empleados);
+            return View(pacientes);
         }
 
-        // GET: empleados/Delete/5
+        // GET: pacientes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            empleados empleados = db.empleados.Find(id);
-            if (empleados == null)
+            pacientes pacientes = db.pacientes.Find(id);
+            if (pacientes == null)
             {
                 return HttpNotFound();
             }
-            return View(empleados);
+            return View(pacientes);
         }
 
-        // POST: empleados/Delete/5
+        // POST: pacientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            empleados empleados = db.empleados.Find(id);
-            db.empleados.Remove(empleados);
+            pacientes pacientes = db.pacientes.Find(id);
+            db.pacientes.Remove(pacientes);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Cita(int id)
+        {
+            return RedirectToAction("Create", "citas");
         }
 
         protected override void Dispose(bool disposing)
@@ -164,5 +128,7 @@ namespace FinalProg3.Controllers
             }
             base.Dispose(disposing);
         }
+
+
     }
 }

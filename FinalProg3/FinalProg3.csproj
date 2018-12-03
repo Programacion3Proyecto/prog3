@@ -155,10 +155,30 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\citasController.cs" />
     <Compile Include="Controllers\empleadosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\pacientesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CitaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CitaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CitaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CitaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CitaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CitaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\citas.cs">
+      <DependentUpon>CitaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Emplead.cs" />
     <Compile Include="Models\EmpleadoEntity.Context.cs">
@@ -177,7 +197,25 @@
       <DependentUpon>EmpleadoEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\empleados.cs">
-      <DependentUpon>EmpleadoEntity.tt</DependentUpon>
+      <DependentUpon>CitaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pacientes.cs">
+      <DependentUpon>PacientesModelos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PacientesModelos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PacientesModelos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PacientesModelos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PacientesModelos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PacientesModelos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PacientesModelos.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -190,6 +228,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\CitaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CitaModel.edmx</DependentUpon>
+      <LastGenOutput>CitaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CitaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CitaModel.edmx</DependentUpon>
+      <LastGenOutput>CitaModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\EmpleadoEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EmpleadoEntity.Context.cs</LastGenOutput>
@@ -199,6 +247,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EmpleadoEntity.edmx</DependentUpon>
       <LastGenOutput>EmpleadoEntity.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PacientesModelos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PacientesModelos.edmx</DependentUpon>
+      <LastGenOutput>PacientesModelos.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PacientesModelos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PacientesModelos.edmx</DependentUpon>
+      <LastGenOutput>PacientesModelos.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -211,6 +269,20 @@
     </EntityDeploy>
     <Content Include="Models\EmpleadoEntity.edmx.diagram">
       <DependentUpon>EmpleadoEntity.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\PacientesModelos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PacientesModelos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PacientesModelos.edmx.diagram">
+      <DependentUpon>PacientesModelos.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\CitaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CitaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CitaModel.edmx.diagram">
+      <DependentUpon>CitaModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -243,6 +315,16 @@
     <Content Include="Views\empleados\Edit.cshtml" />
     <Content Include="Views\empleados\Index.cshtml" />
     <Content Include="Views\empleados\Login.cshtml" />
+    <Content Include="Views\pacientes\Create.cshtml" />
+    <Content Include="Views\pacientes\Delete.cshtml" />
+    <Content Include="Views\pacientes\Details.cshtml" />
+    <Content Include="Views\pacientes\Edit.cshtml" />
+    <Content Include="Views\pacientes\Index.cshtml" />
+    <Content Include="Views\citas\Create.cshtml" />
+    <Content Include="Views\citas\Delete.cshtml" />
+    <Content Include="Views\citas\Details.cshtml" />
+    <Content Include="Views\citas\Edit.cshtml" />
+    <Content Include="Views\citas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

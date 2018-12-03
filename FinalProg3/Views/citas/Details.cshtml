@@ -1,0 +1,66 @@
+﻿@model FinalProg3.Models.citas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>citas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaOtorgada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaOtorgada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.duracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.duracion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idMedico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idMedico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idPaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idPaciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaRealizada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaRealizada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idAsistenteRealizada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idAsistenteRealizada)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
