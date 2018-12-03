@@ -13,6 +13,47 @@ namespace FinalProg3.Controllers
     public class empleadosController : Controller
     {
         private consultorioEntities db = new consultorioEntities();
+        
+
+        public ActionResult Login()
+        {
+            
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(string user, string pass)
+        {
+            empleados us = db.empleados.FirstOrDefault(d => d.usuario == user & d.clave == pass);
+            string puesto;
+            if (us != null)
+            {
+                puesto = us.puesto;
+                if (puesto=="Admin")
+                {
+                        
+                    return RedirectToAction("Index");
+                }
+                else if (puesto=="Secretario")
+                {
+
+                    return RedirectToAction("Index");
+
+                }
+                else if (puesto=="Medico")
+                {
+
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return HttpNotFound();
+                }
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+        }
 
         // GET: empleados
         public ActionResult Index()

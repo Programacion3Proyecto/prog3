@@ -26,5 +26,8 @@ namespace FinalProg3.Models
         }
     
         public virtual DbSet<empleados> empleados { get; set; }
+        public DbSet<empleados> usuario { get; set; }
+        public DbSet<empleados> clave { get; set; }
+        public DbSet<empleados> puesto { get; set; }
     }
 }
