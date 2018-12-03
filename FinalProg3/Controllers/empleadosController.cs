@@ -25,9 +25,11 @@ namespace FinalProg3.Controllers
         {
             empleados us = db.empleados.FirstOrDefault(d => d.usuario == Usuario & d.clave == Clave);
             string puesto;
+            int id;
             if (us != null)
             {
                 puesto = us.puesto;
+                id = us.id;
                  if (puesto=="Admin")
                  {
 
