@@ -42,7 +42,7 @@ namespace FinalProg3.Controllers
                  else if (puesto=="Medico")
                  {
 
-                     return RedirectToAction("Index","visitas");
+                     return RedirectToAction("Index",);
                  }
                  else
                  {
