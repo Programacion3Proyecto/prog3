@@ -117,7 +117,16 @@ namespace FinalProg3.Controllers
 
         public ActionResult Cita(int id)
         {
-            return RedirectToAction("Create", "citas");
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            pacientes pacientes = db.pacientes.Find(id);
+            if (pacientes == null)
+            {
+                return HttpNotFound();
+            }
+            return RedirectToAction("Create", "citas", pacientes);
         }
 
         protected override void Dispose(bool disposing)
