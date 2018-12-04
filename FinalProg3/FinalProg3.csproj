@@ -157,6 +157,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\citasController.cs" />
     <Compile Include="Controllers\empleadosController.cs" />
+    <Compile Include="Controllers\facturasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\pacientesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -198,6 +199,24 @@
     </Compile>
     <Compile Include="Models\empleados.cs">
       <DependentUpon>CitaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FacturaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FacturaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FacturaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\facturas.cs">
+      <DependentUpon>FacturaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pacientes.cs">
       <DependentUpon>PacientesModelos.tt</DependentUpon>
@@ -248,6 +267,16 @@
       <DependentUpon>EmpleadoEntity.edmx</DependentUpon>
       <LastGenOutput>EmpleadoEntity.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\FacturaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FacturaModel.edmx</DependentUpon>
+      <LastGenOutput>FacturaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\FacturaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FacturaModel.edmx</DependentUpon>
+      <LastGenOutput>FacturaModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\PacientesModelos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PacientesModelos.edmx</DependentUpon>
@@ -283,6 +312,13 @@
     </EntityDeploy>
     <Content Include="Models\CitaModel.edmx.diagram">
       <DependentUpon>CitaModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\FacturaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FacturaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\FacturaModel.edmx.diagram">
+      <DependentUpon>FacturaModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -325,6 +361,12 @@
     <Content Include="Views\citas\Details.cshtml" />
     <Content Include="Views\citas\Edit.cshtml" />
     <Content Include="Views\citas\Index.cshtml" />
+    <Content Include="Views\pacientes\Report.cshtml" />
+    <Content Include="Views\facturas\Create.cshtml" />
+    <Content Include="Views\facturas\Delete.cshtml" />
+    <Content Include="Views\facturas\Details.cshtml" />
+    <Content Include="Views\facturas\Edit.cshtml" />
+    <Content Include="Views\facturas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

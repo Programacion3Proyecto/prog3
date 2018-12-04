@@ -7,7 +7,7 @@
       <Diagram DiagramId="90f94d34fe8e4e4d906da402af195a56" Name="Diagram1">
         <EntityTypeShape EntityType="consultorioModel2.citas" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="consultorioModel2.empleados" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="consultorioModel2.citasForanea_Asistente" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="consultorioModel2.citasForanea_Asistente" />
         <AssociationConnector Association="consultorioModel2.citasForanea_Medico" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

@@ -114,7 +114,7 @@ namespace FinalProg3.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        [HttpGet]
         public ActionResult Cita(int id)
         {
             if (id == null)
@@ -130,6 +130,13 @@ namespace FinalProg3.Controllers
                 return HttpNotFound();
             }
             return RedirectToAction("Create", "citas");
+        }
+        [HttpPost]
+        public ActionResult Report(DateTime fecha)
+        {
+         
+            pacientes sells = db.pacientes.FirstOrDefault(p => p.fechaNac == fecha);
+            return View(sells);
         }
 
         protected override void Dispose(bool disposing)

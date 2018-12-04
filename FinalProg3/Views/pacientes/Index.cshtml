@@ -9,50 +9,75 @@
 <p>
     @Html.ActionLink("Crear nuevo paciente", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.apellido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fechaNac)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tipoSangre)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.apellido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefono)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fechaNac)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tipoSangre)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.id }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.id }) |
-            @Html.ActionLink("Agregar Cita","Cita", new { id=item.id })
-        </td>
-    </tr>
-}
+@*using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-</table>
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.TextBox("Busqueda", "" , new { @class = "form-control", placeholder = "Introduzca un mes" } )
+                @Html.ValidationMessage("Busqueda", "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="">
+                <input type="submit" value="Buscar" class="btn btn-default" />
+            </div>
+        </div>
+        </div>
+    }*@
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaNac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipoSangre)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaNac)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipoSangre)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id }) |
+                    @Html.ActionLink("Agregar Cita", "Cita", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

@@ -13,10 +13,10 @@ namespace FinalProg3.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class consultorioEntities : DbContext
+    public partial class consultorioEntities3 : DbContext
     {
-        public consultorioEntities()
-            : base("name=consultorioEntities")
+        public consultorioEntities3()
+            : base("name=consultorioEntities3")
         {
         }
     
@@ -25,11 +25,6 @@ namespace FinalProg3.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<empleados> empleados { get; set; }
-        public DbSet<empleados> usuario { get; set; }
-        public DbSet<empleados> clave { get; set; }
-        public DbSet<empleados> puesto { get; set; }
-
-        public System.Data.Entity.DbSet<FinalProg3.Models.facturas> facturas { get; set; }
+        public virtual DbSet<facturas> facturas { get; set; }
     }
 }

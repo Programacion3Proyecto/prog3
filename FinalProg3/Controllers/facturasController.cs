@@ -10,107 +10,107 @@ using FinalProg3.Models;
 
 namespace FinalProg3.Controllers
 {
-    public class citasController : Controller
+    public class facturasController : Controller
     {
-        private consultorioEntities1 db = new consultorioEntities1();
+        private consultorioEntities db = new consultorioEntities();
 
-        // GET: citas
+        // GET: facturas
         public ActionResult Index()
         {
-            return View(db.citas.ToList());
+            return View(db.facturas.ToList());
         }
 
-        // GET: citas/Details/5
+        // GET: facturas/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            citas citas = db.citas.Find(id);
-            if (citas == null)
+            facturas facturas = db.facturas.Find(id);
+            if (facturas == null)
             {
                 return HttpNotFound();
             }
-            return View(citas);
+            return View(facturas);
         }
 
-        // GET: citas/Create
+        // GET: facturas/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: citas/Create
+        // POST: facturas/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,fechaOtorgada,duracion,idMedico,idPaciente,fechaRealizada,idAsistenteRealizada")] citas citas)
+        public ActionResult Create([Bind(Include = "id,idPaciente,idEmpleado,fecha,monto")] facturas facturas)
         {
             if (ModelState.IsValid)
             {
-                db.citas.Add(citas);
+                db.facturas.Add(facturas);
                 db.SaveChanges();
-                return RedirectToAction("Create");
+                return RedirectToAction("Index");
             }
 
-            return View(citas);
+            return View(facturas);
         }
 
-        // GET: citas/Edit/5
+        // GET: facturas/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            citas citas = db.citas.Find(id);
-            if (citas == null)
+            facturas facturas = db.facturas.Find(id);
+            if (facturas == null)
             {
                 return HttpNotFound();
             }
-            return View(citas);
+            return View(facturas);
         }
 
-        // POST: citas/Edit/5
+        // POST: facturas/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,fechaOtorgada,duracion,idMedico,idPaciente,fechaRealizada,idAsistenteRealizada")] citas citas)
+        public ActionResult Edit([Bind(Include = "id,idPaciente,idEmpleado,fecha,monto")] facturas facturas)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(citas).State = EntityState.Modified;
+                db.Entry(facturas).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(citas);
+            return View(facturas);
         }
 
-        // GET: citas/Delete/5
+        // GET: facturas/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            citas citas = db.citas.Find(id);
-            if (citas == null)
+            facturas facturas = db.facturas.Find(id);
+            if (facturas == null)
             {
                 return HttpNotFound();
             }
-            return View(citas);
+            return View(facturas);
         }
 
-        // POST: citas/Delete/5
+        // POST: facturas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            citas citas = db.citas.Find(id);
-            db.citas.Remove(citas);
+            facturas facturas = db.facturas.Find(id);
+            db.facturas.Remove(facturas);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
