@@ -123,5 +123,10 @@ namespace FinalProg3.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Calendario()
+        {
+            return View();
+        }
     }
 }
