@@ -5,7 +5,7 @@
 }
 
 <h2 class="text-center" style="margin: 3% 0 2% 0;">Crear empleados</h2>
-
+}
 
 @using (Html.BeginForm()) 
 {
@@ -14,13 +14,12 @@
     <div class="form-horizontal" >
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group center-block">
-          
-            @*@Html.LabelFor(model => model.id,"ID", htmlAttributes: new { @class = "control-label col-lg-4" })*@
-            <div class="center-block">
-                @Html.EditorFor(model => model.id, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "ID" } })
-                @Html.ValidationMessageFor(model => model.id, "", new { @class = "text-danger" })
+                @*@Html.LabelFor(model => model.id,"ID", htmlAttributes: new { @class = "control-label col-lg-4" })*@
+                <div class="center-block">
+                    @Html.EditorFor(model => model.id, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Cedula", } })
+                    @Html.ValidationMessageFor(model => model.id, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
         <div class="form-group center-block">
             @*@Html.LabelFor(model => model.nombre,"Nombre", htmlAttributes: new { @class = "control-label col-lg-4" })*@
@@ -41,7 +40,23 @@
         <div class="form-group center-block">
             @*@Html.LabelFor(model => model.puesto,"Puesto", htmlAttributes: new { @class = "control-label col-lg-4" })*@
             <div class="center-block">
-                @Html.EditorFor(model => model.puesto, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Puesto" } })
+                @{
+                    var listado = new List<SelectListItem>()
+                        {
+                            new SelectListItem()
+                            {
+                                Text="Secretario",
+                                Value="Secretario"
+                        },
+                            new SelectListItem()
+                            {
+                                Text="Medico",
+                                Value="Medico"
+                            }
+                    };
+                }
+                @Html.DropDownListFor(model => model.puesto,listado, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Puesto" } })
+                @*Html.EditorFor(model => model.puesto, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Puesto" } })*@
                 @Html.ValidationMessageFor(model => model.puesto, "", new { @class = "text-danger" })
             </div>
         </div>

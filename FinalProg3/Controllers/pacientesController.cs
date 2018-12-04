@@ -121,12 +121,15 @@ namespace FinalProg3.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            pacientes pacientes = db.pacientes.Find(id);
+           
+            pacientes pacientes = db.pacientes.FirstOrDefault(p => p.id == id);
+            var cita = new citas();
+            cita.idPaciente = pacientes.id;
             if (pacientes == null)
             {
                 return HttpNotFound();
             }
-            return RedirectToAction("Create", "citas", pacientes);
+            return RedirectToAction("Create", "citas");
         }
 
         protected override void Dispose(bool disposing)
