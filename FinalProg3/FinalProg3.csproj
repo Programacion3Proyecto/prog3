@@ -367,6 +367,7 @@
     <Content Include="Views\facturas\Details.cshtml" />
     <Content Include="Views\facturas\Edit.cshtml" />
     <Content Include="Views\facturas\Index.cshtml" />
+    <Content Include="Views\citas\Calendario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
