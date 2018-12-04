@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="consultorioModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="consultorioModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="citas">
           <Key>
             <PropertyRef Name="id" />
@@ -12,10 +12,10 @@
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="fechaOtorgada" Type="datetime" />
           <Property Name="duracion" Type="int" />
-          <Property Name="idMedico" Type="int" Nullable="false" />
-          <Property Name="idPaciente" Type="int" Nullable="false" />
+          <Property Name="nombreMedico" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="nombrePaciente" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="fechaRealizada" Type="datetime" />
-          <Property Name="idAsistenteRealizada" Type="int" Nullable="false" />
+          <Property Name="nombreAsistenteRealizada" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="empleados">
           <Key>
@@ -28,44 +28,11 @@
           <Property Name="usuario" Type="varchar" MaxLength="20" />
           <Property Name="clave" Type="varchar" MaxLength="20" />
         </EntityType>
-        <Association Name="citasForanea_Asistente">
-          <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
-          <End Role="citas" Type="Self.citas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="empleados">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="citas">
-              <PropertyRef Name="idAsistenteRealizada" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="citasForanea_Medico">
-          <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
-          <End Role="citas" Type="Self.citas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="empleados">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="citas">
-              <PropertyRef Name="idMedico" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="consultorioModel2StoreContainer">
           <EntitySet Name="citas" EntityType="Self.citas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="empleados" EntityType="Self.empleados" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="citasForanea_Asistente" Association="Self.citasForanea_Asistente">
-            <End Role="empleados" EntitySet="empleados" />
-            <End Role="citas" EntitySet="citas" />
-          </AssociationSet>
-          <AssociationSet Name="citasForanea_Medico" Association="Self.citasForanea_Medico">
-            <End Role="empleados" EntitySet="empleados" />
-            <End Role="citas" EntitySet="citas" />
-          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="consultorioModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -76,10 +43,10 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="fechaOtorgada" Type="DateTime" Precision="3" />
           <Property Name="duracion" Type="Int32" />
-          <Property Name="Medico" Type="String" Nullable="false" />
-          <Property Name="idPaciente" Type="Int32" Nullable="false" />
           <Property Name="fechaRealizada" Type="DateTime" Precision="3" />
-          <Property Name="AsistenteRealizada" Type="String" Nullable="false" />
+          <Property Name="nombreMedico1" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="nombrePaciente" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="nombreAsistenteRealizada" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="empleados">
           <Key>
@@ -105,13 +72,13 @@
           <EntitySetMapping Name="citas">
             <EntityTypeMapping TypeName="consultorioModel2.citas">
               <MappingFragment StoreEntitySet="citas">
+                <ScalarProperty Name="nombreAsistenteRealizada" ColumnName="nombreAsistenteRealizada" />
+                <ScalarProperty Name="nombrePaciente" ColumnName="nombrePaciente" />
+                <ScalarProperty Name="nombreMedico1" ColumnName="nombreMedico" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fechaOtorgada" ColumnName="fechaOtorgada" />
                 <ScalarProperty Name="duracion" ColumnName="duracion" />
-                <ScalarProperty Name="Medico" ColumnName="idMedico" />
-                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
                 <ScalarProperty Name="fechaRealizada" ColumnName="fechaRealizada" />
-                <ScalarProperty Name="AsistenteRealizada" ColumnName="idAsistenteRealizada" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
