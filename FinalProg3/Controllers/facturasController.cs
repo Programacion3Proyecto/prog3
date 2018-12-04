@@ -52,7 +52,7 @@ namespace FinalProg3.Controllers
             {
                 db.facturas.Add(facturas);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Facturas");
             }
 
             return View(facturas);
