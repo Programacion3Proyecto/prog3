@@ -15,9 +15,9 @@ namespace FinalProg3.Models
     public partial class facturas
     {
         public int id { get; set; }
-        public int idPaciente { get; set; }
-        public int idEmpleado { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
         public Nullable<int> monto { get; set; }
+        public string nombrePaciente { get; set; }
+        public string nombreEmpleado { get; set; }
     }
 }
