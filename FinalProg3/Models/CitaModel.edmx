@@ -76,12 +76,10 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="fechaOtorgada" Type="DateTime" Precision="3" />
           <Property Name="duracion" Type="Int32" />
-          <Property Name="idMedico" Type="Int32" Nullable="false" />
+          <Property Name="Medico" Type="String" Nullable="false" />
           <Property Name="idPaciente" Type="Int32" Nullable="false" />
           <Property Name="fechaRealizada" Type="DateTime" Precision="3" />
-          <Property Name="idAsistenteRealizada" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="empleados" Relationship="Self.citasForanea_Asistente" FromRole="citas" ToRole="empleados" />
-          <NavigationProperty Name="empleados1" Relationship="Self.citasForanea_Medico" FromRole="citas" ToRole="empleados" />
+          <Property Name="AsistenteRealizada" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="empleados">
           <Key>
@@ -93,44 +91,10 @@
           <Property Name="puesto" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="clave" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="citas" Relationship="Self.citasForanea_Asistente" FromRole="empleados" ToRole="citas" />
-          <NavigationProperty Name="citas1" Relationship="Self.citasForanea_Medico" FromRole="empleados" ToRole="citas" />
         </EntityType>
-        <Association Name="citasForanea_Asistente">
-          <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
-          <End Role="citas" Type="Self.citas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="empleados">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="citas">
-              <PropertyRef Name="idAsistenteRealizada" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="citasForanea_Medico">
-          <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
-          <End Role="citas" Type="Self.citas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="empleados">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="citas">
-              <PropertyRef Name="idMedico" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="consultorioEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="citas" EntityType="Self.citas" />
           <EntitySet Name="empleados" EntityType="Self.empleados" />
-          <AssociationSet Name="citasForanea_Asistente" Association="Self.citasForanea_Asistente">
-            <End Role="empleados" EntitySet="empleados" />
-            <End Role="citas" EntitySet="citas" />
-          </AssociationSet>
-          <AssociationSet Name="citasForanea_Medico" Association="Self.citasForanea_Medico">
-            <End Role="empleados" EntitySet="empleados" />
-            <End Role="citas" EntitySet="citas" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -144,10 +108,10 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fechaOtorgada" ColumnName="fechaOtorgada" />
                 <ScalarProperty Name="duracion" ColumnName="duracion" />
-                <ScalarProperty Name="idMedico" ColumnName="idMedico" />
+                <ScalarProperty Name="Medico" ColumnName="idMedico" />
                 <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
                 <ScalarProperty Name="fechaRealizada" ColumnName="fechaRealizada" />
-                <ScalarProperty Name="idAsistenteRealizada" ColumnName="idAsistenteRealizada" />
+                <ScalarProperty Name="AsistenteRealizada" ColumnName="idAsistenteRealizada" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
