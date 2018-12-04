@@ -44,7 +44,7 @@
           <Property Name="fechaOtorgada" Type="DateTime" Precision="3" />
           <Property Name="duracion" Type="Int32" />
           <Property Name="fechaRealizada" Type="DateTime" Precision="3" />
-          <Property Name="nombreMedico1" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="nombreMedico" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="nombrePaciente" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="nombreAsistenteRealizada" Type="Int32" Nullable="false" />
         </EntityType>
@@ -74,7 +74,7 @@
               <MappingFragment StoreEntitySet="citas">
                 <ScalarProperty Name="nombreAsistenteRealizada" ColumnName="nombreAsistenteRealizada" />
                 <ScalarProperty Name="nombrePaciente" ColumnName="nombrePaciente" />
-                <ScalarProperty Name="nombreMedico1" ColumnName="nombreMedico" />
+                <ScalarProperty Name="nombreMedico" ColumnName="nombreMedico" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fechaOtorgada" ColumnName="fechaOtorgada" />
                 <ScalarProperty Name="duracion" ColumnName="duracion" />

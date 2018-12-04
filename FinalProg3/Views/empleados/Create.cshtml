@@ -16,7 +16,7 @@
         <div class="form-group center-block">
                 @*@Html.LabelFor(model => model.id,"ID", htmlAttributes: new { @class = "control-label col-lg-4" })*@
                 <div class="center-block">
-                    @Html.EditorFor(model => model.id, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Cedula", } })
+                    @Html.EditorFor(model => model.id, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "ID", } })
                     @Html.ValidationMessageFor(model => model.id, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -39,23 +39,29 @@
 
         <div class="form-group center-block">
             @*@Html.LabelFor(model => model.puesto,"Puesto", htmlAttributes: new { @class = "control-label col-lg-4" })*@
-            <div class="center-block">
-                @{
-                    var listado = new List<SelectListItem>()
-                        {
-                            new SelectListItem()
-                            {
-                                Text="Secretario",
-                                Value="Secretario"
-                        },
-                            new SelectListItem()
-                            {
-                                Text="Medico",
-                                Value="Medico"
-                            }
-                    };
-                }
-                @Html.DropDownListFor(model => model.puesto,listado, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Puesto" } })
+            <div class="center-block" style="display:flex; justify-content:center;">
+                @*@{
+            var listado = new List<SelectListItem>()
+                {
+                    new SelectListItem()
+                    {
+                        Text="Secretario",
+                        Value="Secretario"
+                },
+                    new SelectListItem()
+                    {
+                        Text="Medico",
+                        Value="Medico"
+                    }
+            };
+        }
+        @Html.DropDownListFor(model => model.puesto,listado, new { htmlAttributes = new { @class = "form-control center-block text-center",@style="padding:100px;" } })*@
+                @Html.DropDownListFor(model => model.puesto,
+                  new List<SelectListItem> {
+                       new SelectListItem { Value = "Medico" , Text = "Medico" },
+                       new SelectListItem { Value = "Secretario" , Text = "Secretario" }
+                    },
+                  new { @class="myselect", @style="width: 300px; padding: 7px; border-radius:5px;"})
                 @*Html.EditorFor(model => model.puesto, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Puesto" } })*@
                 @Html.ValidationMessageFor(model => model.puesto, "", new { @class = "text-danger" })
             </div>
@@ -64,7 +70,7 @@
         <div class="form-group center-block">
             @*@Html.LabelFor(model => model.usuario,"Usuario", htmlAttributes: new { @class = "control-label col-lg-4" })*@
             <div class="center-block">
-                @Html.EditorFor(model => model.usuario, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder="Usuario" } })
+                @Html.EditorFor(model => model.usuario, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder="Usuario", @style = "width:300px; padding: 7px; border - radius:2 %; text - align:center;" } })
                 @Html.ValidationMessageFor(model => model.usuario, "", new { @class = "text-danger" })
             </div>
         </div>

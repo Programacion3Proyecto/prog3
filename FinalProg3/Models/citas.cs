@@ -18,7 +18,7 @@ namespace FinalProg3.Models
         public Nullable<System.DateTime> fechaOtorgada { get; set; }
         public Nullable<int> duracion { get; set; }
         public Nullable<System.DateTime> fechaRealizada { get; set; }
-        public string nombreMedico1 { get; set; }
+        public string nombreMedico { get; set; }
         public string nombrePaciente { get; set; }
         public int nombreAsistenteRealizada { get; set; }
     }

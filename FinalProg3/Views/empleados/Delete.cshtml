@@ -43,13 +43,13 @@
             @Html.DisplayFor(model => model.usuario)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.clave)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.clave)
-        </dd>
+        </dd>*@
 
     </dl>
 
@@ -57,7 +57,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
             @Html.ActionLink("Volver atras", "Index")
         </div>
     }

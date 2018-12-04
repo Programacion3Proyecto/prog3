@@ -15,16 +15,16 @@
             @Html.DisplayNameFor(model => model.duracion)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nombreMedico1)
+            @Html.DisplayNameFor(model => model.idMedico)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nombrePaciente)
+            @Html.DisplayNameFor(model => model.idPaciente)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.fechaRealizada)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nombreAsistenteRealizada)
+            @Html.DisplayNameFor(model => model.idAsistenteRealizada)
         </th>
         <th></th>
     </tr>
@@ -39,16 +39,16 @@
                 @Html.DisplayFor(modelItem => item.duracion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.nombreMedico1)
+                @Html.DisplayFor(modelItem => item.idMedico)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.nombrePaciente)
+                @Html.DisplayFor(modelItem => item.idPaciente)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.fechaRealizada)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.nombreAsistenteRealizada)
+                @Html.DisplayFor(modelItem => item.idAsistenteRealizada)
             </td>
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.id }) |

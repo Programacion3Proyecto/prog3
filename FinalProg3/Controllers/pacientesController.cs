@@ -123,6 +123,8 @@ namespace FinalProg3.Controllers
             }
            
             pacientes pacientes = db.pacientes.FirstOrDefault(p => p.id == id);
+            var cita = new citas();
+            //cita.idPaciente = pacientes.id;
             if (pacientes == null)
             {
                 return HttpNotFound();
