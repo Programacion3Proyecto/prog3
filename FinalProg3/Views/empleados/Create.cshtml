@@ -16,7 +16,7 @@
         <div class="form-group center-block">
                 @*@Html.LabelFor(model => model.id,"ID", htmlAttributes: new { @class = "control-label col-lg-4" })*@
                 <div class="center-block">
-                    @Html.EditorFor(model => model.id, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Cedula", } })
+                    @Html.EditorFor(model => model.id, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "ID", } })
                     @Html.ValidationMessageFor(model => model.id, "", new { @class = "text-danger" })
                 </div>
             </div>
