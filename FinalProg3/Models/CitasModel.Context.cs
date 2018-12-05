@@ -13,10 +13,10 @@ namespace FinalProg3.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class consultorioEntities2 : DbContext
+    public partial class consultorioEntities4 : DbContext
     {
-        public consultorioEntities2()
-            : base("name=consultorioEntities2")
+        public consultorioEntities4()
+            : base("name=consultorioEntities4")
         {
         }
     
@@ -26,6 +26,5 @@ namespace FinalProg3.Models
         }
     
         public virtual DbSet<citas> citas { get; set; }
-        public virtual DbSet<empleados> empleados { get; set; }
     }
 }

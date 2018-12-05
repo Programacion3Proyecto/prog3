@@ -15,6 +15,7 @@ namespace FinalProg3.Models
     
     public partial class consultorioEntities : DbContext
     {
+
         public consultorioEntities()
             : base("name=consultorioEntities")
         {
@@ -26,10 +27,5 @@ namespace FinalProg3.Models
         }
     
         public virtual DbSet<empleados> empleados { get; set; }
-        public DbSet<empleados> usuario { get; set; }
-        public DbSet<empleados> clave { get; set; }
-        public DbSet<empleados> puesto { get; set; }
-
-        public System.Data.Entity.DbSet<FinalProg3.Models.facturas> facturas { get; set; }
     }
 }

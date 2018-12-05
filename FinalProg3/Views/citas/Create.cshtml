@@ -30,11 +30,19 @@
             </div>
         </div>
 
+<<<<<<< HEAD
+        <div class="form-group">s
+            @Html.LabelFor(model => model.nombreMedico, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nombreMedico, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nombreMedico, "", new { @class = "text-danger" })
+=======
         <div class="form-group">
             @Html.LabelFor(model => model.idMedico, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.idMedico, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.idMedico, "", new { @class = "text-danger" })
+>>>>>>> 2ee4d946bcc68d80eb8bbea04406c9ceb6ea2b33
             </div>
         </div>
 
