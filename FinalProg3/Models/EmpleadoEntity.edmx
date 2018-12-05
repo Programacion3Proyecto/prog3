@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="varchar" MaxLength="30" />
           <Property Name="apellido" Type="varchar" MaxLength="30" />
           <Property Name="puesto" Type="varchar" MaxLength="30" />
@@ -27,7 +27,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="puesto" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />

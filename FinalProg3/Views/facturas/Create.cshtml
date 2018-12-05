@@ -10,47 +10,55 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group center-block">
-            @*@Html.LabelFor(model => model.nombrePaciente, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="center-block">
-                @Html.EditorFor(model => model.nombrePaciente, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Nombre del paciente" } })
-                @Html.ValidationMessageFor(model => model.nombrePaciente, "", new { @class = "text-danger" })
-            </div>
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @*<div class="form-group center-block">
+        <div class="center-block">
+            @Html.EditorFor(model => model.id, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "ID" } })
+            @Html.ValidationMessageFor(model => model.id, "", new { @class = "text-danger" })
         </div>
+    </div>*@
 
-        <div class="form-group center-block">
-            @*@Html.LabelFor(model => model.nombreEmpleado, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="center-block">
-                @Html.EditorFor(model => model.nombreEmpleado, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Nombre de empleado" } })
-                @Html.ValidationMessageFor(model => model.nombreEmpleado, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group center-block">
-            @*@Html.LabelFor(model => model.fecha, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="center-block">
-                @Html.TextBox("fecha", DateTime.Now.ToString("yyyy/MM/dd"), new { id = "fecha", @class = "form-control center-block text-center", placeholder="Fecha" })
-                @Html.ValidationMessageFor(model => model.fecha, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group center-block">
-            @*@Html.LabelFor(model => model.monto, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="center-block">
-                @Html.EditorFor(model => model.monto, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Monto" } })
-                @Html.ValidationMessageFor(model => model.monto, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group center-block">
-            <div class="center-block">
-                <input type="submit" value="Crear" class="btn btn-danger btn-lg btn-block center-block" />
-            </div>
+    <div class="form-group center-block">
+        @*@Html.LabelFor(model => model.nombrePaciente, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="center-block">
+            @Html.EditorFor(model => model.nombrePaciente, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Nombre del paciente" } })
+            @Html.ValidationMessageFor(model => model.nombrePaciente, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group center-block">
+        @*@Html.LabelFor(model => model.nombreEmpleado, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="center-block">
+            @Html.EditorFor(model => model.nombreEmpleado, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Nombre de empleado" } })
+            @Html.ValidationMessageFor(model => model.nombreEmpleado, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group center-block">
+        @*@Html.LabelFor(model => model.fecha, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="center-block">
+            @Html.TextBox("fecha", DateTime.Now.ToString("yyyy/MM/dd"), new { id = "fecha", @class = "form-control center-block text-center", placeholder = "Fecha" })
+            @Html.ValidationMessageFor(model => model.fecha, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group center-block">
+        @*@Html.LabelFor(model => model.monto, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="center-block">
+            @Html.EditorFor(model => model.monto, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Monto" } })
+            @Html.ValidationMessageFor(model => model.monto, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group center-block">
+        <div class="center-block">
+            <input type="submit" value="Crear" class="btn btn-danger btn-lg btn-block center-block" />
+        </div>
+    </div>
+</div>
 }
 
 <div style="display:flex; justify-content: space-between;">
