@@ -35,11 +35,13 @@
             @Html.ValidationMessageFor(model => model.duracion, "", new { @class = "text-danger" })
         </div>
     </div>
-
+    @{ 
+        var aja = DateTime.Now.ToString("yyyy/MM/dd");
+    }
     <div class="form-group center-block">
         @*@Html.LabelFor(model => model.fechaRealizada, htmlAttributes: new { @class = "control-label col-md-2" })*@
         <div class="center-block">
-            @Html.TextBox("Usuario", DateTime.Now.ToString("yyyy/MM/dd"), new { id = "fecha1", @class = "form-control center-block text-center" })
+            @Html.TextBoxFor(model => model.fechaRealizada, new { htmlAttributes = new { id = "fecha1", @class = "form-control center-block text-center", Text = aja } })
            @* @Html.EditorFor(model => model.fechaRealizada, new { htmlAttributes = new { @class = "form-control center-block text-center", placeholder = "Fecha actual", id = "fecha1" } })*@
             @Html.ValidationMessageFor(model => model.fechaRealizada, "", new { @class = "text-danger" })
         </div>
