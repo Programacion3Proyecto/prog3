@@ -6,9 +6,11 @@
 
 <h2 class="text-center" style="margin: 3% 0 2% 0;">Lista de visitas</h2>
 
-<p>
+<div style="display:flex; justify-content:space-between">
     @Html.ActionLink("Crear nueva visita", "Create")
-</p>
+    @Html.ActionLink("Cerrar sesion", "Login", "empleados")
+
+</div>
 <table class="table table table-hover">
     <tr style="background: #808080; color: #fff;">
         <th >
