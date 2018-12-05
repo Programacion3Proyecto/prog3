@@ -12,7 +12,7 @@ namespace FinalProg3.Controllers
 {
     public class citasController : Controller
     {
-        private consultorioEntities db = new consultorioEntities();
+        private consultorioEntities6 db = new consultorioEntities6();
 
         // GET: citas
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace FinalProg3.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,fechaOtorgada,duracion,fechaRealizada,nombreMedico1,nombrePaciente,nombreAsistenteRealizada")] citas citas)
+        public ActionResult Create([Bind(Include = "id,fechaOtorgada,duracion,fechaRealizada,nombreMedico,nombrePaciente,nombreAsistenteRealizada")] citas citas)
         {
             if (ModelState.IsValid)
             {
