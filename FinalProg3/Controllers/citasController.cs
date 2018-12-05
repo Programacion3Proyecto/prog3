@@ -12,7 +12,7 @@ namespace FinalProg3.Controllers
 {
     public class citasController : Controller
     {
-        private consultorioEntities db = new consultorioEntities();
+        private consultorioEntities6 db = new consultorioEntities6();
 
         // GET: citas
         public ActionResult Index()
