@@ -40,7 +40,7 @@ namespace FinalProg3.Controllers
 
                      return RedirectToAction("Index", "pacientes");
 
-                 }
+                 }  
                  else if (puesto=="Medico")
                  {
 
