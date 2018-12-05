@@ -46,7 +46,11 @@ namespace FinalProg3.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+<<<<<<< HEAD
+        public ActionResult Create([Bind(Include = "id,fechaOtorgada,duracion,nombreMedico,nombrePaciente,fechaRealizada,nombreAsistenteRealizada")] citas citas)
+=======
         public ActionResult Create([Bind(Include = "id,fechaOtorgada,duracion,idMedico,idPaciente,fechaRealizada,idAsistenteRealizada")] citas citas)
+>>>>>>> 2ee4d946bcc68d80eb8bbea04406c9ceb6ea2b33
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +82,11 @@ namespace FinalProg3.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+<<<<<<< HEAD
+        public ActionResult Edit([Bind(Include = "id,fechaOtorgada,duracion,nombreMedico,nombrePaciente,fechaRealizada,nombreAsistenteRealizada")] citas citas)
+=======
         public ActionResult Edit([Bind(Include = "id,fechaOtorgada,duracion,idMedico,idPaciente,fechaRealizada,idAsistenteRealizada")] citas citas)
+>>>>>>> 2ee4d946bcc68d80eb8bbea04406c9ceb6ea2b33
         {
             if (ModelState.IsValid)
             {

@@ -163,23 +163,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CitaModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CitaModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CitaModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CitaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CitaModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CitaModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\citas.cs">
-      <DependentUpon>CitaModel.tt</DependentUpon>
+      <DependentUpon>CitasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CitasModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CitasModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CitasModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CitasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CitasModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CitasModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Emplead.cs" />
     <Compile Include="Models\EmpleadoEntity.Context.cs">
@@ -198,7 +198,7 @@
       <DependentUpon>EmpleadoEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\empleados.cs">
-      <DependentUpon>CitaModel.tt</DependentUpon>
+      <DependentUpon>EmpleadoEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FacturaModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -288,15 +288,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\CitaModel.Context.tt">
+    <Content Include="Models\CitasModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CitaModel.edmx</DependentUpon>
-      <LastGenOutput>CitaModel.Context.cs</LastGenOutput>
+      <DependentUpon>CitasModel.edmx</DependentUpon>
+      <LastGenOutput>CitasModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\CitaModel.tt">
+    <Content Include="Models\CitasModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CitaModel.edmx</DependentUpon>
-      <LastGenOutput>CitaModel.cs</LastGenOutput>
+      <DependentUpon>CitasModel.edmx</DependentUpon>
+      <LastGenOutput>CitasModel.cs</LastGenOutput>
     </Content>
     <Content Include="Models\EmpleadoEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -347,19 +347,19 @@
     <Content Include="Models\PacientesModelos.edmx.diagram">
       <DependentUpon>PacientesModelos.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\CitaModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CitaModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\CitaModel.edmx.diagram">
-      <DependentUpon>CitaModel.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Models\FacturaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>FacturaModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Models\FacturaModel.edmx.diagram">
       <DependentUpon>FacturaModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\CitasModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CitasModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CitasModel.edmx.diagram">
+      <DependentUpon>CitasModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
