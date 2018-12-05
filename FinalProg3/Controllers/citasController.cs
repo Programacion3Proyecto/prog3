@@ -52,7 +52,7 @@ namespace FinalProg3.Controllers
             {
                 db.citas.Add(citas);
                 db.SaveChanges();
-                return RedirectToAction("Index","facturas");
+                return RedirectToAction("Index");
             }
 
             return View(citas);
@@ -78,7 +78,7 @@ namespace FinalProg3.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,fechaOtorgada,duracion,fechaRealizada,nombreMedico1,nombrePaciente,nombreAsistenteRealizada")] citas citas)
+        public ActionResult Edit([Bind(Include = "id,fechaOtorgada,duracion,fechaRealizada,nombreMedico,nombrePaciente,nombreAsistenteRealizada")] citas citas)
         {
             if (ModelState.IsValid)
             {
