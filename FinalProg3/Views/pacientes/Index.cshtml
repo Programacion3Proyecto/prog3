@@ -6,9 +6,10 @@
 
 <h2 class="text-center" style="margin: 3% 0 2% 0;">Lista de pacientes</h2>
 
-<p>
+<div style="display:flex; justify-content: space-between; padding:1%;">
     @Html.ActionLink("Crear nuevo paciente", "Create")
-</p>
+    @Html.ActionLink("Agregar nueva cita", "Create", "citas")
+</div>
 
 @*using (Html.BeginForm())
     {
@@ -34,6 +35,9 @@
     <table class="table table-hover">
         <tr style="background: #808080; color: #fff;">
             <th>
+                ID
+            </th>
+            <th>
                 Nombre
             </th>
             <th>
@@ -53,29 +57,32 @@
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.apellido)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.telefono)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.fechaNac)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.tipoSangre)
-                </td>
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
-                    @*@Html.ActionLink("Detalles", "Details", new { id = item.id }) |*@
-                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id }) |
-                    @Html.ActionLink("Agregar Cita", "Cita", new { id = item.id })
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaNac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipoSangre)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                @*@Html.ActionLink("Detalles", "Details", new { id = item.id }) |*@
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }) |
+                @Html.ActionLink("Agregar Cita", "Cita", new { id = item.id })
+            </td>
+        </tr>
         }
 
     </table>
