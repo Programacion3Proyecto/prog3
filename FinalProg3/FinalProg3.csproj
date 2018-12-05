@@ -452,6 +452,7 @@
     <Content Include="Views\visitas\Edit.cshtml" />
     <Content Include="Views\visitas\Index.cshtml" />
     <Content Include="Views\visitas\Receta.cshtml" />
+    <Content Include="Views\citas\Calendar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

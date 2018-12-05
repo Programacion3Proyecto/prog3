@@ -9,6 +9,13 @@
 <p>
     @Html.ActionLink("Crear nuevo empleado", "Create")
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+        Buscar por nombre: @Html.TextBox("nombre")
+        <input type="submit" value="Buscar" />
+    </p>
+}
 <table class="table table-hover">
     <thead class="text-center" style="background:#808080">
         <tr style="color: #fff;">

@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -46,13 +46,13 @@ namespace FinalProg3.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombrePaciente,nombreMedico,fecha,monto")] facturas facturas)
+        public ActionResult Create([Bind(Include = "id,nombrePaciente,nombreEmpleado,fecha,monto")] facturas facturas)
         {
             if (ModelState.IsValid)
             {
                 db.facturas.Add(facturas);
                 db.SaveChanges();
-                return RedirectToAction("Index","facturas");
+                return RedirectToAction("Index");
             }
 
             return View(facturas);
@@ -78,7 +78,7 @@ namespace FinalProg3.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombrePaciente,nombreMedico,fecha,monto")] facturas facturas)
+        public ActionResult Edit([Bind(Include = "id,nombrePaciente,nombreEmpleado,fecha,monto")] facturas facturas)
         {
             if (ModelState.IsValid)
             {
