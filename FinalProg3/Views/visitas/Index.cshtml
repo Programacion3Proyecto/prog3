@@ -4,33 +4,33 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 class="text-center" style="margin: 3% 0 2% 0;">Lista de visitas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear nueva visita", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaRealizada)
+<table class="table table table-hover">
+    <tr style="background: #808080; color: #fff;">
+        <th >
+            Fecha de la visita
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Motivo)
+            Motivo
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nombreMedico)
+            Nombre del médico
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nombrePaciente)
+            Nombre del paciente
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Comentario)
+            Comentario
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RecetaMedicamento)
+            Receta Médica
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FechaProxVisita)
+            Próxima visita
         </th>
         <th></th>
     </tr>
@@ -59,10 +59,10 @@
             @Html.DisplayFor(modelItem => item.FechaProxVisita)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id }) |
-            @Html.ActionLink("Ver Receta","Receta")
+            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id }) |
+            @Html.ActionLink("Receta","Receta")
         </td>
     </tr>
 }

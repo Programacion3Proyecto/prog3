@@ -19,11 +19,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.idEmpleado)
+            @Html.DisplayNameFor(model => model.nombreEmpleado)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.idEmpleado)
+            @Html.DisplayFor(model => model.nombreEmpleado)
         </dd>
 
         <dt>
@@ -45,6 +45,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
 </p>

@@ -20,7 +20,7 @@ namespace FinalProg3.Models
         public string nombreMedico { get; set; }
         public string nombrePaciente { get; set; }
         public string Comentario { get; set; }
-        public byte[] RecetaMedicamento { get; set; }
-        public string FechaProxVisita { get; set; }
+        public string RecetaMedicamento { get; set; }
+        public System.DateTime FechaProxVisita { get; set; }
     }
 }
