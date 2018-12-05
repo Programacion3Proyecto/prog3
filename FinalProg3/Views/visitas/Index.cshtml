@@ -1,0 +1,70 @@
+﻿@model IEnumerable<FinalProg3.Models.visitas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaRealizada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Motivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreMedico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombrePaciente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comentario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecetaMedicamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaProxVisita)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaRealizada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Motivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreMedico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombrePaciente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comentario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecetaMedicamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaProxVisita)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id }) |
+            @Html.ActionLink("Ver Receta","Receta")
+        </td>
+    </tr>
+}
+
+</table>

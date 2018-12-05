@@ -44,11 +44,11 @@ namespace FinalProg3.Controllers
                  else if (puesto=="Medico")
                  {
 
-                     return RedirectToAction("Index");
+                     return RedirectToAction("Index", "visitas");
                  }
                  else
                  {
-                     return HttpNotFound();
+                     return View("Login");
                  }
             }
             else

@@ -160,6 +160,7 @@
     <Compile Include="Controllers\facturasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\pacientesController.cs" />
+    <Compile Include="Controllers\visitasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,6 +236,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PacientesModelos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VisitaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VisitaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VisitaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VisitaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VisitaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VisitaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\visitas.cs">
+      <DependentUpon>VisitaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -328,6 +347,16 @@
       <DependentUpon>PacientesModelos.edmx</DependentUpon>
       <LastGenOutput>PacientesModelos.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\VisitaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VisitaModel.edmx</DependentUpon>
+      <LastGenOutput>VisitaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\VisitaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VisitaModel.edmx</DependentUpon>
+      <LastGenOutput>VisitaModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -360,6 +389,13 @@
     </EntityDeploy>
     <Content Include="Models\CitasModel.edmx.diagram">
       <DependentUpon>CitasModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\VisitaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VisitaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\VisitaModel.edmx.diagram">
+      <DependentUpon>VisitaModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -410,6 +446,12 @@
     <Content Include="Views\citas\Details.cshtml" />
     <Content Include="Views\citas\Edit.cshtml" />
     <Content Include="Views\citas\Index.cshtml" />
+    <Content Include="Views\visitas\Create.cshtml" />
+    <Content Include="Views\visitas\Delete.cshtml" />
+    <Content Include="Views\visitas\Details.cshtml" />
+    <Content Include="Views\visitas\Edit.cshtml" />
+    <Content Include="Views\visitas\Index.cshtml" />
+    <Content Include="Views\visitas\Receta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

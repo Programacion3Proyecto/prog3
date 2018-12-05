@@ -1,0 +1,74 @@
+﻿@model FinalProg3.Models.visitas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>visitas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaRealizada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaRealizada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Motivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Motivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreMedico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreMedico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombrePaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombrePaciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comentario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comentario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecetaMedicamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecetaMedicamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaProxVisita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaProxVisita)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
