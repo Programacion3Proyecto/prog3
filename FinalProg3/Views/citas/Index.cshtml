@@ -6,6 +6,9 @@
 
 <h2>Index</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 <table class="table">
     <tr>
         <th>
@@ -15,57 +18,46 @@
             @Html.DisplayNameFor(model => model.duracion)
         </th>
         <th>
-<<<<<<< HEAD
-            @Html.DisplayNameFor(model => model.nombreMedico)
-=======
-            @Html.DisplayNameFor(model => model.idMedico)
->>>>>>> 2ee4d946bcc68d80eb8bbea04406c9ceb6ea2b33
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idPaciente)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.fechaRealizada)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.idAsistenteRealizada)
+            @Html.DisplayNameFor(model => model.nombreMedico1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombrePaciente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreAsistenteRealizada)
         </th>
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.fechaOtorgada)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.duracion)
-            </td>
-            <td>
-<<<<<<< HEAD
-                @Html.DisplayFor(modelItem => item.nombreMedico)
-=======
-                @Html.DisplayFor(modelItem => item.idMedico)
->>>>>>> 2ee4d946bcc68d80eb8bbea04406c9ceb6ea2b33
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.idPaciente)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fechaRealizada)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.idAsistenteRealizada)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaOtorgada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duracion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaRealizada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreMedico1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombrePaciente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreAsistenteRealizada)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
 </table>
-<div>
-    @Html.ActionLink("Volver a la lista", "Index","pacientes")
-</div>

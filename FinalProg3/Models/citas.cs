@@ -17,10 +17,6 @@ namespace FinalProg3.Models
         public int id { get; set; }
         public Nullable<System.DateTime> fechaOtorgada { get; set; }
         public Nullable<int> duracion { get; set; }
-<<<<<<< HEAD
-=======
-        public Nullable<System.DateTime> fechaRealizada { get; set; }
->>>>>>> 2ee4d946bcc68d80eb8bbea04406c9ceb6ea2b33
         public string nombreMedico { get; set; }
         public string nombrePaciente { get; set; }
         public Nullable<System.DateTime> fechaRealizada { get; set; }

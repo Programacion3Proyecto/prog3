@@ -27,5 +27,7 @@ namespace FinalProg3.Models
         }
     
         public virtual DbSet<empleados> empleados { get; set; }
+
+        public System.Data.Entity.DbSet<FinalProg3.Models.citas> citas { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace FinalProg3.Controllers
 {
     public class citasController : Controller
     {
-        private consultorioEntities1 db = new consultorioEntities1();
+        private consultorioEntities db = new consultorioEntities();
 
         // GET: citas
         public ActionResult Index()
@@ -46,17 +46,13 @@ namespace FinalProg3.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-        public ActionResult Create([Bind(Include = "id,fechaOtorgada,duracion,nombreMedico,nombrePaciente,fechaRealizada,nombreAsistenteRealizada")] citas citas)
-=======
-        public ActionResult Create([Bind(Include = "id,fechaOtorgada,duracion,idMedico,idPaciente,fechaRealizada,idAsistenteRealizada")] citas citas)
->>>>>>> 2ee4d946bcc68d80eb8bbea04406c9ceb6ea2b33
+        public ActionResult Create([Bind(Include = "id,fechaOtorgada,duracion,fechaRealizada,nombreMedico1,nombrePaciente,nombreAsistenteRealizada")] citas citas)
         {
             if (ModelState.IsValid)
             {
                 db.citas.Add(citas);
                 db.SaveChanges();
-                return RedirectToAction("Create");
+                return RedirectToAction("Index","facturas");
             }
 
             return View(citas);
@@ -82,11 +78,7 @@ namespace FinalProg3.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-        public ActionResult Edit([Bind(Include = "id,fechaOtorgada,duracion,nombreMedico,nombrePaciente,fechaRealizada,nombreAsistenteRealizada")] citas citas)
-=======
-        public ActionResult Edit([Bind(Include = "id,fechaOtorgada,duracion,idMedico,idPaciente,fechaRealizada,idAsistenteRealizada")] citas citas)
->>>>>>> 2ee4d946bcc68d80eb8bbea04406c9ceb6ea2b33
+        public ActionResult Edit([Bind(Include = "id,fechaOtorgada,duracion,fechaRealizada,nombreMedico1,nombrePaciente,nombreAsistenteRealizada")] citas citas)
         {
             if (ModelState.IsValid)
             {
@@ -130,11 +122,6 @@ namespace FinalProg3.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        public ActionResult Calendario()
-        {
-            return View();
         }
     }
 }

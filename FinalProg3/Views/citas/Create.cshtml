@@ -1,5 +1,5 @@
 ﻿@model FinalProg3.Models.citas
-<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
 @{
     ViewBag.Title = "Create";
 }
@@ -10,72 +10,64 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>citas</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.fechaOtorgada, htmlAttributes: new { @class = "control-label col-md-2", })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fechaOtorgada, new { htmlAttributes = new { @class = "form-control", id = "fecha" } })
-                @Html.ValidationMessageFor(model => model.fechaOtorgada, "", new { @class = "text-danger"})
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.duracion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.duracion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.duracion, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-<<<<<<< HEAD
-        <div class="form-group">s
-            @Html.LabelFor(model => model.nombreMedico, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombreMedico, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nombreMedico, "", new { @class = "text-danger" })
-=======
-        <div class="form-group">
-            @Html.LabelFor(model => model.idMedico, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.idMedico, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.idMedico, "", new { @class = "text-danger" })
->>>>>>> 2ee4d946bcc68d80eb8bbea04406c9ceb6ea2b33
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.idPaciente, htmlAttributes: new { @class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.idPaciente, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.idPaciente,"", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.fechaRealizada, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fechaRealizada, new { htmlAttributes = new { @class = "form-control", id="fecha1" } })
-                @Html.ValidationMessageFor(model => model.fechaRealizada, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.idAsistenteRealizada, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.idAsistenteRealizada, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.idAsistenteRealizada, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+<div class="form-horizontal">
+    <h4>citas</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.fechaOtorgada, htmlAttributes: new { @class = "control-label col-md-2", })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.fechaOtorgada, new { htmlAttributes = new { @class = "form-control", id = "fecha" } })
+            @Html.ValidationMessageFor(model => model.fechaOtorgada, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.duracion, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.duracion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.duracion, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.fechaRealizada, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.fechaRealizada, new { htmlAttributes = new { @class = "form-control", id = "fecha1" } })
+            @Html.ValidationMessageFor(model => model.fechaRealizada, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.nombreMedico, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.nombreMedico, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.nombreMedico, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.nombrePaciente, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.nombrePaciente, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.nombrePaciente, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.nombreAsistenteRealizada, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.nombreAsistenteRealizada, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.nombreAsistenteRealizada, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
 }
 
 <div>
@@ -83,11 +75,9 @@
 </div>
 
 @section scripts{
-    
-    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
 
-    <script> 
-        $(function () {
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>$(function () {
             $('#fecha').datepicker({
                 dateFormat: "yy-mm-dd",
                 showStatus: true,
@@ -110,7 +100,5 @@
                 showAnim: 'blind',
                 highlightWeek: true
             })
-        })
-        
-    </script>
-    }
+        })</script>
+}

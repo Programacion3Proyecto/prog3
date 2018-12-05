@@ -13,10 +13,10 @@ namespace FinalProg3.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class consultorioEntities4 : DbContext
+    public partial class consultorioEntities6 : DbContext
     {
-        public consultorioEntities4()
-            : base("name=consultorioEntities4")
+        public consultorioEntities6()
+            : base("name=consultorioEntities6")
         {
         }
     

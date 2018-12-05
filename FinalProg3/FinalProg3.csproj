@@ -399,17 +399,17 @@
     <Content Include="Views\pacientes\Details.cshtml" />
     <Content Include="Views\pacientes\Edit.cshtml" />
     <Content Include="Views\pacientes\Index.cshtml" />
-    <Content Include="Views\citas\Create.cshtml" />
-    <Content Include="Views\citas\Delete.cshtml" />
-    <Content Include="Views\citas\Details.cshtml" />
-    <Content Include="Views\citas\Edit.cshtml" />
-    <Content Include="Views\citas\Index.cshtml" />
     <Content Include="Views\pacientes\Report.cshtml" />
     <Content Include="Views\facturas\Create.cshtml" />
     <Content Include="Views\facturas\Delete.cshtml" />
     <Content Include="Views\facturas\Details.cshtml" />
     <Content Include="Views\facturas\Edit.cshtml" />
     <Content Include="Views\facturas\Index.cshtml" />
+    <Content Include="Views\citas\Create.cshtml" />
+    <Content Include="Views\citas\Delete.cshtml" />
+    <Content Include="Views\citas\Details.cshtml" />
+    <Content Include="Views\citas\Edit.cshtml" />
+    <Content Include="Views\citas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -33,29 +33,6 @@
         </div>
 
         <div class="form-group">
-<<<<<<< HEAD
-            @Html.LabelFor(model => model.nombreMedico, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombreMedico, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nombreMedico, "", new { @class = "text-danger" })
-=======
-            @Html.LabelFor(model => model.idMedico, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.idMedico, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.idMedico, "", new { @class = "text-danger" })
->>>>>>> 2ee4d946bcc68d80eb8bbea04406c9ceb6ea2b33
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.idPaciente, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.idPaciente, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.idPaciente, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.fechaRealizada, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.fechaRealizada, new { htmlAttributes = new { @class = "form-control" } })
@@ -64,10 +41,26 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.idAsistenteRealizada, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.nombreMedico1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.idAsistenteRealizada, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.idAsistenteRealizada, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.nombreMedico1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nombreMedico1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nombrePaciente, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nombrePaciente, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nombrePaciente, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nombreAsistenteRealizada, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nombreAsistenteRealizada, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nombreAsistenteRealizada, "", new { @class = "text-danger" })
             </div>
         </div>
 

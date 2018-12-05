@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="consultorioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="consultorioModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="citas">
           <Key>
             <PropertyRef Name="id" />
@@ -17,14 +17,14 @@
           <Property Name="fechaRealizada" Type="datetime" />
           <Property Name="nombreAsistenteRealizada" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="consultorioModelStoreContainer">
+        <EntityContainer Name="consultorioModel2StoreContainer">
           <EntitySet Name="citas" EntityType="Self.citas" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="consultorioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="consultorioModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="citas">
           <Key>
             <PropertyRef Name="id" />
@@ -37,7 +37,7 @@
           <Property Name="fechaRealizada" Type="DateTime" Precision="3" />
           <Property Name="nombreAsistenteRealizada" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="consultorioEntities4" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="consultorioEntities6" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="citas" EntityType="Self.citas" />
         </EntityContainer>
       </Schema>
@@ -45,9 +45,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="consultorioModelStoreContainer" CdmEntityContainer="consultorioEntities4">
+        <EntityContainerMapping StorageEntityContainer="consultorioModel2StoreContainer" CdmEntityContainer="consultorioEntities6">
           <EntitySetMapping Name="citas">
-            <EntityTypeMapping TypeName="consultorioModel.citas">
+            <EntityTypeMapping TypeName="consultorioModel2.citas">
               <MappingFragment StoreEntitySet="citas">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fechaOtorgada" ColumnName="fechaOtorgada" />
