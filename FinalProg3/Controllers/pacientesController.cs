@@ -136,7 +136,7 @@ namespace FinalProg3.Controllers
         {
          
             pacientes sells = db.pacientes.FirstOrDefault(p => p.fechaNac == fecha);
-            return View(sells);
+            return View(db.pacientes.GroupBy(p=> p.fechaNac.Equals("yyyy/mm/dd")).ToList());
         }
 
         protected override void Dispose(bool disposing)

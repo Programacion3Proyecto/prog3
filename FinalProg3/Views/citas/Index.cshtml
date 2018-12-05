@@ -13,48 +13,48 @@
 </div>
 <table class="table table-hover">
     <tr style="background: #808080; color: #fff;">
-        <th>
+        <th class="text-center">
             Fecha Cita
         </th>
-        <th>
-            Duración
+        <th class="text-center">
+            Duración en minutos
         </th>
-        <th>
+        <th class="text-center">
             Realizada 
         </th>
-        <th>
+        <th class="text-center">
             Doctor
         </th>
-        <th>
+        <th class="text-center">
             Paciente
         </th>
-        <th>
+        <th class="text-center">
             Realizada por
         </th>
-        <th></th>
+        <th class="text-center" ></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.fechaOtorgada)
         </td>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.duracion)
         </td>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.fechaRealizada)
         </td>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.nombreMedico)
         </td>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.nombrePaciente)
         </td>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.nombreAsistenteRealizada)
         </td>
-        <td>
+        <td class="text-center">
             @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
             @Html.ActionLink("Facturar", "Create", "facturas") |
             @Html.ActionLink("Eliminar", "Delete", new { id = item.id })

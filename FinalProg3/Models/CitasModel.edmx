@@ -33,7 +33,7 @@
           <Property Name="fechaOtorgada" Type="DateTime" Precision="3" />
           <Property Name="duracion" Type="Int32" />
           <Property Name="nombreMedico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nombrePaciente" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombrePaciente" Type="String" Nullable="false" Unicode="false" FixedLength="false" MaxLength="30" />
           <Property Name="fechaRealizada" Type="DateTime" Precision="3" />
           <Property Name="nombreAsistenteRealizada" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>

@@ -12,36 +12,36 @@
 </div>
 <table class="table table-hover">
     <tr style="background: #808080; color: #fff;">
-        <th>
+        <th class="text-center">
             Paciente
         </th>
-        <th>
+        <th class="text-center">
             Empleado
         </th>
-        <th>
+        <th class="text-center">
             Fecha
         </th>
-        <th>
+        <th class="text-center">
             Monto
         </th>
-        <th></th>
+        <th class="text-center"></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.nombrePaciente)
         </td>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.nombreEmpleado)
         </td>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.fecha)
         </td>
-        <td>
+        <td class="text-center">
             @Html.DisplayFor(modelItem => item.monto)
         </td>
-        <td>
+        <td class="text-center">
             @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
             @*@Html.ActionLink("Details", "Details", new { id=item.id }) |*@
             @Html.ActionLink("Eliminar", "Delete", new { id=item.id })
