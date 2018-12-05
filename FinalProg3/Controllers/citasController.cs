@@ -115,6 +115,19 @@ namespace FinalProg3.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Calendar()
+        {
+            return View();
+        }
+        public JsonResult GetEvents()
+        {
+            using (consultorioEntities6 db = new consultorioEntities6())
+            {
+                var events = db.citas.ToList();
+                return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            }
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
