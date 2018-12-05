@@ -33,8 +33,14 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.puesto, "Puesto:", htmlAttributes: new { @class = "text-center", @style = "width:100%;" })
-            <div class="center-block">
-                @Html.EditorFor(model => model.puesto, new { htmlAttributes = new { @class = "form-control center-block text-center" } })
+            <div class="center-block"style="display:flex; justify-content:center;">
+                @Html.DropDownListFor(model => model.puesto,
+          new List<SelectListItem> {
+               new SelectListItem { Value = "Medico" , Text = "Medico" },
+               new SelectListItem { Value = "Secretario" , Text = "Secretario" }
+            },
+          new { @class="myselect", @style="width: 300px; padding: 7px; border-radius:5px;"})
+               @* @Html.EditorFor(model => model.puesto, new { htmlAttributes = new { @class = "form-control center-block text-center" } })*@
                 @Html.ValidationMessageFor(model => model.puesto, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,7 +56,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.clave, "Clave:", htmlAttributes: new { @class = "text-center", @style = "width:100%;" })
             <div class="center-block">
-                @Html.Password("Clave", "", new { id = "clave", Textmode = "Password", @class = "form-control center-block text-center", placeholder = "Clave", @style = "margin-bottom: 2%;" })
+                @Html.EditorFor(model => model.clave, new { htmlAttributes = new { id = "clave", type = "password", @class = "form-control center-block text-center", placeholder = "Clave", @style = "margin-bottom: 2%;" } })
                 @Html.ValidationMessageFor(model => model.clave, "", new { @class = "text-danger" })
             </div>
         </div>
