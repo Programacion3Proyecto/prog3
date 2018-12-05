@@ -4,30 +4,30 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 class="text-center" style="margin: 3% 0 2% 0;">Ver Citas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear nueva", "Create")
 </p>
-<table class="table">
-    <tr>
+<table class="table table-hover">
+    <tr style="background: #808080; color: #fff;">
         <th>
-            @Html.DisplayNameFor(model => model.fechaOtorgada)
+            Fecha Cita
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.duracion)
+            Duración
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fechaRealizada)
+            Realizada 
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nombreMedico1)
+            Doctor
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nombrePaciente)
+            Paciente
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nombreAsistenteRealizada)
+            Realizada por
         </th>
         <th></th>
     </tr>
@@ -44,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.fechaRealizada)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.nombreMedico1)
+            @Html.DisplayFor(modelItem => item.nombreMedico)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.nombrePaciente)
